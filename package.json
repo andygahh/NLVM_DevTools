@@ -1,0 +1,25 @@
+{
+  "name": "nlvm",
+  "version": "1.0.0",
+  "description": "IDE extensions and plugins for NLVM scripting language.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andygahh/NLVM_DevTools.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andygahh/NLVM_DevTools/issues"
+  },
+  "homepage": "https://github.com/andygahh/NLVM_DevTools#readme",
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2"
+  }
+}
