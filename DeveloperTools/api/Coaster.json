@@ -1,0 +1,237 @@
+{
+    "className": "Coaster",
+    "package": "com.nolimitscoaster",
+
+    "fields": [
+        {
+            "name": "E_BLOCK_SYSTEM_MODE_AUTOMATIC",
+            "type": "int",
+            "modifiers": ["static", "final"]
+        }, 
+        {
+            "name": "E_BLOCK_SYSTEM_MODE_FULL_MANUAL",
+            "type": "int",
+            "modifiers": ["static", "final"]
+        },
+        {
+            "name": "E_BLOCK_SYSTEM_MODE_OFFLINE",
+            "type": "int",
+            "modifiers": ["static", "final"]
+        },
+        {
+            "name": "E_BLOCK_SYSTEM_MODE_SEMI_MANUAL",
+            "type": "int",
+            "modifiers": ["static", "final"]
+        }
+    ],
+
+    "methods": [
+        {
+            "name": "canChangeEmergencyStop",
+            "returnType": "bool",
+            "parameters": [],
+            "description": "Returns if the emergency stop state can be changed using setEmergencyStop."
+        },
+        {
+            "name": "canSetBlockSystemMode",
+            "returnType": "bool",
+            "parameters": [
+                {
+                    "name": "mode",
+                    "type": "int",
+                    "description": "See E_BLOCK_SYSTEM_MODE_ constants for possible values."
+                }
+            ],
+            "description": "Checks if the block system mode can be changed to a desired mode.",
+            "returnDescription": "True when it is possible to change the mode to the desired mode."
+        },
+        {
+            "name": "findNearestTrack",
+            "returnType": "TrackPos",
+            "parameters": [
+                {
+                    "name": "pos",
+                    "type": "nlvm.math3d.Vector3f",
+                    "description": "Position in 3D editor space."
+                },
+                {
+                    "name": "range",
+                    "type": "float",
+                    "description": "Range of sphere (in meters) to search a track within. When negative or zero, no range test will be performed."
+                }
+            ],
+            "description": "Searches for the nearest track of this coaster within a specified range.",
+            "returnDescription": "A TrackPos object that represents the track and position, or null if no track is within range."
+        },
+        {
+            "name": "findNearestTrain",
+            "returnType": "Train",
+            "parameters": [
+                {
+                    "name": "pos",
+                    "type": "nlvm.math3d.Vector3f"
+                },
+                {
+                    "name": "range",
+                    "type": "float"
+                }
+            ],
+            "description": "Returns the nearest train at pos within range."
+        },
+        {
+            "name": "getBlock",
+            "returnType": "Block",
+            "parameters": [
+                {
+                    "name": "name",
+                    "type": "String"
+                }
+            ],
+            "description": "Returns a block with a specific name."
+        },
+        {
+            "name": "getBlockSystemMode",
+            "returnType": "int",
+            "parameters": [],
+            "description": "Returns the current block system mode the coaster is working in.",
+            "returnDescription": "See E_BLOCK_SYSTEM_MODE_ constants for possible returned values."
+        },
+        {
+            "name": "getCoasterStyleId",
+            "returnType": "int",
+            "parameters": [],
+            "description": "Returns the coaster style's type number."
+        },
+        {
+            "name": "getName",
+            "returnType": "String",
+            "parameters": [],
+            "description": "Returns the coaster's name."
+        },
+        {
+            "name": "getSection",
+            "returnType": "Section",
+            "parameters": [
+                {
+                    "name": "name",
+                    "type": "String"
+                }
+            ],
+            "description": "Returns a section with a specific name."
+        },
+        {
+            "name": "getSpecialTrack",
+            "returnType": "SpecialTrack",
+            "parameters": [
+                {
+                    "name": "name",
+                    "type": "String"
+                }
+            ],
+            "description": "Returns a handle to a special track with a specific name."
+        },
+        {
+            "name": "getTrackTrigger",
+            "returnType": "TrackTrigger",
+            "parameters": [
+                {
+                    "name": "name",
+                    "type": "String",
+                    "description": "Name of track trigger as specified in the editor."
+                }
+            ],
+            "description": "Gets a track trigger by name."
+        },
+        {
+            "name": "getTrackTriggers",
+            "returnType": "TrackTrigger[]",
+            "parameters": [
+                {
+                    "name": "name",
+                    "type": "String",
+                    "description": "Name of track trigger as specified in the editor."
+                }
+            ],
+            "description": "Gets all track triggers having the same name.",
+            "returnDescription": "Array of TrackTrigger handles, or null if there is no track trigger with that name."
+        },
+        {
+            "name": "getTrainAt",
+            "returnType": "Train",
+            "parameters": [
+                {
+                    "name": "index",
+                    "type": "int",
+                    "description": "Train index; must be in the range 0...getTrainCount()-1."
+                }
+            ],
+            "description": "Returns a handle to a train."
+        },
+        {
+            "name": "getTrainCount",
+            "returnType": "int",
+            "parameters": [],
+            "description": "Returns the number of trains."
+        },
+        {
+            "name": "isEmergencyStop",
+            "returnType": "bool",
+            "parameters": [],
+            "description": "Returns the state of the emergency stop."
+        },
+        {
+            "name": "isScriptedOperationMode",
+            "returnType": "bool",
+            "parameters": [],
+            "description": "Returns true when the coaster is in scripted operation mode."
+        },
+        {
+            "name": "requestReset",
+            "returnType": "void",
+            "parameters": [],
+            "description": "Requests resetting the coaster."
+        },
+        {
+            "name": "setBlockSystemController",
+            "returnType": "void",
+            "parameters": [
+                {
+                    "name": "a",
+                    "type": "BlockSystemController"
+                }
+            ],
+            "description": "Sets the block system controller, which is required for coasters that are in scripted operation mode."
+        },
+        {
+            "name": "setBlockSystemMode",
+            "returnType": "bool",
+            "parameters": [
+                {
+                    "name": "mode",
+                    "type": "int",
+                    "description": "See E_BLOCK_SYSTEM_MODE_ constants for possible values."
+                }
+            ],
+            "description": "Sets the current block system mode the coaster should be working in.",
+            "returnDescription": "True when the mode was changed successfully, false if it could not be changed or if the mode parameter is invalid."
+        },
+        {
+            "name": "setEmergencyStop",
+            "returnType": "void",
+            "parameters": [
+                {
+                    "name": "estop",
+                    "type": "bool",
+                    "description": "True to enable, false to disable."
+                }
+            ],
+            "description": "Sets the state of the emergency stop."
+        },
+        {
+            "name": "toString",
+            "returnType": "String",
+            "parameters": [],
+            "description": "Returns the coaster's name."
+        }
+    ]
+}

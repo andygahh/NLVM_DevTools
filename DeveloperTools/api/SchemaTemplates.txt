@@ -1,0 +1,13 @@
+Method
+{
+    "name": "",
+    "returnType": "",
+    "parameters": [],
+    "description": ""
+}
+
+Parameter
+{
+    "name": "",
+    "type": ""
+}
