@@ -1,0 +1,22 @@
+Method
+    {
+        "name": "",
+        "returnType": "",
+        "parameters": [],
+        "description": "",
+        "returnDescription": ""
+    }
+
+Parameter
+                {
+                    "name": "",
+                    "type": "",
+                    "description": ""
+                }
+
+Field
+    {
+        "name": "",
+        "type": "",
+        "modifiers": []
+    }

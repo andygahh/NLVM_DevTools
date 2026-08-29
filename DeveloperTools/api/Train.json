@@ -1,0 +1,193 @@
+{
+    "className": "Train",
+    "package": "com.nolimitscoaster",
+
+    "methods": [
+        {
+            "name": "getBogieCount",
+            "returnType": "int",
+            "parameters": [],
+            "description": "Gets the number of bogies this train has.",
+            "returnDescription": "Number of bogies."
+        },
+
+        {
+            "name": "getBogieMatrix",
+            "returnType": "void",
+            "parameters": [
+                {
+                    "name": "index",
+                    "type": "int",
+                    "description": "The index goes from front of the train to the back. 0 <= index < getBogieCount()."
+                },
+                {
+                    "name": "m",
+                    "type": "nlvm.math3d.Matrix4x4f",
+                    "description": "The result is stored in this transformation matrix."
+                }
+            ],
+            "description": "Gets the bogie's orientation and position as a transformation matrix."
+        },
+
+        {
+            "name": "getBogieOrientationAndPosition",
+            "returnType": "void",
+            "parameters": [
+                {
+                    "name": "index",
+                    "type": "int",
+                    "description": "The index goes from front of the train to the back. 0 <= index < getBogieCount()."
+                },
+
+                {
+                    "name": "frontOut",
+                    "type": "nlvm.math3d.Vector3f",
+                    "description": "frontOut can be null if no front vector is requested."
+                },
+                {
+                    "name": "topOut",
+                    "type": "nlvm.math3d.Vector3f",
+                    "description": "topOut can be null if no top vector is requested."
+                },
+                {
+                    "name": "rightOut",
+                    "type": "nlvm.math3d.Vector3f",
+                    "description": "rightOut can be null if no right-unit vector is requested."
+                },
+                {
+                    "name": "posOut",
+                    "type": "nlvm.math3d.Vector3f",
+                    "description": "posOut can be null if no position vector is requested."
+                }
+            ],
+            "description": "Gets the bogie's orientation unit vectors and position vector."
+        },
+
+        {
+            "name": "getCarCount",
+            "returnType": "int",
+            "parameters": [],
+            "description": "Gets the number of cars this train has.",
+            "returnDescription": "Returns number of cars."
+        },
+
+        {
+            "name": "getCarMatrix",
+            "returnType": "void",
+            "parameters": [
+                {
+                    "name": "index",
+                    "type": "int",
+                    "description": "The index goes from front of the train to the back. 0 <= index < getCarCount()."
+                },
+                {
+                    "name": "m",
+                    "type": "nlvm.math3d.Matrix4x4f",
+                    "description": "The result is stored in this transformation matrix."
+                }
+            ],
+            "description": "Gets the car's orientation and position as a transformation matrix."
+        },
+
+        {
+            "name": "getCarOrientationAndPosition",
+            "returnType": "void",
+            "parameters": [
+                {
+                    "name": "index",
+                    "type": "int",
+                    "description": "The index goes from front of the train to the back. 0 <= index < getCarCount()."
+                },
+
+                {
+                    "name": "frontOut",
+                    "type": "nlvm.math3d.Vector3f",
+                    "description": "frontOut can be null if no front vector is requested."
+                },
+                {
+                    "name": "topOut",
+                    "type": "nlvm.math3d.Vector3f",
+                    "description": "topOut can be null if no top vector is requested."
+                },
+                {
+                    "name": "rightOut",
+                    "type": "nlvm.math3d.Vector3f",
+                    "description": "rightOut can be null if no right-unit vector is requested."
+                },
+                {
+                    "name": "posOut",
+                    "type": "nlvm.math3d.Vector3f",
+                    "description": "posOut can be null if no position vector is requested."
+                }
+            ],
+            "description": "Gets the car's orientation unit vectors and position vector."
+        },
+
+        {
+            "name": "getCoaster",
+            "returnType": "Coaster",
+            "parameters": [],
+            "description": "Returns the coaster this block belongs to."
+        },
+
+        {
+            "name": "getHarnessState",
+            "returnType": "float",
+            "parameters": [],
+            "description": "Returns the state of the harnesses (0...1).",
+            "returnDescription": "0 means fully closed and 1 means fully opened."
+        },
+
+        {
+            "name": "getOnboardStreamedSound",
+            "returnType": "StreamedSound",
+            "parameters": [],
+            "description": "Returns the currently onboard streamed sound."
+        },
+
+        {
+            "name": "getSpeed",
+            "returnType": "double",
+            "parameters": [],
+            "description": "Returns the current speed of the train in meters per second."
+        },
+
+        {
+            "name": "getTrainIndex",
+            "returnType": "int",
+            "parameters": [],
+            "description": "Returns the index of the train, starting from 0 for the first train."
+        },
+
+        {
+            "name": "isLashedToTrack",
+            "returnType": "bool",
+            "parameters": [],
+            "description": "Returns the lashed to track state."
+        },
+
+        {
+            "name": "setLashedToTrack",
+            "returnType": "void",
+            "parameters": [
+                {
+                    "name": "lashed",
+                    "type": "bool"
+                }
+            ],
+            "description": "Enables or disables the lashed to track state."
+        },
+
+        {
+            "name": "setOnboardStreamedSound",
+            "returnType": "void",
+            "parameters": [
+                {
+                    "name": "sound",
+                    "type": "StreamedSound"
+                }
+            ],
+            "description": "Set the onboard streamed sound."
+        }
+    ]
+}

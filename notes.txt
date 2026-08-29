@@ -1,0 +1,1 @@
+Keep an eye on Train.getCoaster() method. It doesn't make very much sense.
